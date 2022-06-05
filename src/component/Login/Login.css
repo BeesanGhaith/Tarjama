@@ -5,13 +5,13 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 10ch;
+  margin-top: 15ch;
 }
 
 .container-login {
-  border: solid 0.1ch rgb(228, 226, 226);
-  padding: 2ch 2ch 2ch 2ch;
+  padding: 3ch 3ch;
   border-radius: 10%;
+  box-shadow: 0 0 10px gray;
 }
 
 .title-login {
@@ -50,7 +50,7 @@
   font-size: larg;
   font-family: cursive;
   font-weight: bold;
-  margin-bottom: 8ch;
+  margin-bottom: 4ch;
   outline: none;
 }
 
@@ -66,21 +66,11 @@
   width: 80%;
 }
 
-.ErrorMessageLogin {
-  /* margin-bottom: 2ch;
+.error-message {
+  margin-bottom: 2ch;
     font-family: system-ui;
-    color: red;
+    color: #c53f3f;
     font-weight: bold;
-    font-size: small; */
+    font-size: 0.9rem;
 }
 
-/* 
-  @media (max-width: 800px) {
-    .divLogin{
-      width: 54vh;
-    }
-    .divLogin2{
-      width: 40vh;
-    }
-  }
-   */
