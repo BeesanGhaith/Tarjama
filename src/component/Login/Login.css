@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap");
+
+.div-login {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10ch;
+}
+
+.container-login {
+  border: solid 0.1ch rgb(228, 226, 226);
+  padding: 2ch 2ch 2ch 2ch;
+  border-radius: 10%;
+}
+
+.title-login {
+  font-size: xx-large;
+  font-family: cursive;
+  font-weight: bold;
+}
+
+.parag-login {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: large;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  gap: 3ch;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-login {
+  border: none;
+  border-bottom: 0.2ch solid;
+  width: 70%;
+  font-family: cursive;
+  outline: none;
+}
+
+.btn-login {
+  width: 70%;
+  height: 5ch;
+  background-color: #c53f3f;
+  border: solid #c53f3f 0.3ch;
+  color: white;
+  font-size: larg;
+  font-family: cursive;
+  font-weight: bold;
+  margin-bottom: 8ch;
+  outline: none;
+}
+
+.btn-login:hover {
+  background-color: white;
+  color: #c53f3f;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.img-login {
+  height: 80%;
+  width: 80%;
+}
+
+.ErrorMessageLogin {
+  /* margin-bottom: 2ch;
+    font-family: system-ui;
+    color: red;
+    font-weight: bold;
+    font-size: small; */
+}
+
+/* 
+  @media (max-width: 800px) {
+    .divLogin{
+      width: 54vh;
+    }
+    .divLogin2{
+      width: 40vh;
+    }
+  }
+   */
