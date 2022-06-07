@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Users from "../Users/Users";
 import Posts from "../Posts/Posts";
 import { FaUsers } from "react-icons/fa";
-import {MdOutlinePostAdd} from "react-icons/md";
+import { MdOutlinePostAdd } from "react-icons/md";
 
 function Home() {
   const [users, setUsers] = useState(false);
@@ -36,16 +36,16 @@ function Home() {
             </h2>
           </div>
           <div>
-            <MdOutlinePostAdd className="users-icon"/>
-          <h2
-            onClick={() => {
-              setPosts(true);
-              setUsers(false);
-            }}
+            <MdOutlinePostAdd className="users-icon" />
+            <h2
+              onClick={() => {
+                setPosts(true);
+                setUsers(false);
+              }}
             >
-            Posts
-          </h2>
-            </div>
+              Posts
+            </h2>
+          </div>
         </div>
         <div>
           {users ? (
@@ -55,7 +55,6 @@ function Home() {
               <Posts />
             </>
           )}
-          
         </div>
       </div>
     </>

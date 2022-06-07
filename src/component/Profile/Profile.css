@@ -7,8 +7,8 @@
 }
 
 .div-icons h1 {
-    font-weight: bolder;
-    text-decoration: underline;
+  font-weight: bolder;
+  text-decoration: underline;
 }
 
 .edit-icon-pro {
@@ -17,8 +17,8 @@
 }
 
 .edit-icon-pro:hover {
-    cursor: pointer;
-    color: #b95151;
+  cursor: pointer;
+  color: #b95151;
 }
 
 .div-profile {
@@ -97,7 +97,7 @@
 }
 
 .btn-edit-pro:hover {
-    color: #582727;
+  color: #582727;
   cursor: pointer;
 }
 
@@ -105,7 +105,7 @@
   .div-profile {
     margin-left: 2ch;
   }
-  
+
   .div-address-company {
     gap: 2ch;
   }

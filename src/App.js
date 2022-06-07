@@ -11,7 +11,7 @@ function App() {
   const [profile, setProfile] = useState();
   return (
     <div className="App">
-      <Navigation profile={profile}/>
+      <Navigation profile={profile} />
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />

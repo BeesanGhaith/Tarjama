@@ -32,7 +32,6 @@ function Profile() {
     await axios
       .get(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then((response) => {
-        console.log(response.data.address);
         setUserInfo(response.data);
         setUserInfoAddress(response.data.address);
         setUserInfoCompany(response.data.company);
@@ -63,14 +62,11 @@ function Profile() {
         },
       })
       .then((response) => {
-        console.log(response.data);
         setUserInfo(response.data);
         setUserInfoAddress(response.data.address);
         setUserInfoCompany(response.data.company);
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => {});
   };
 
   useEffect(() => {
@@ -97,7 +93,6 @@ function Profile() {
             setCompanyName(userInfoCompany.name);
             setCatchPhrase(userInfoCompany.catchPhrase);
             setBs(userInfoCompany.bs);
-            console.log(userInfo);
           }}
         />
       </div>
@@ -252,7 +247,6 @@ function Profile() {
               onClick={() => {
                 updateUserInfo(state.user.id);
                 setStatus(false);
-                console.log(userInfo);
               }}
             >
               Edit

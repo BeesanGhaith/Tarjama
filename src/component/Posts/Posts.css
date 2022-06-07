@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
 .div-posts {
   display: flex;
@@ -15,7 +15,7 @@
   width: 40%;
   padding: 2ch 2ch;
   margin-top: 4ch;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .card p {
@@ -28,21 +28,20 @@
 }
 
 .comments {
-    margin-top: 3ch;
-    margin-bottom: 3ch;
-    border-bottom: 1px solid rgb(179, 179, 179);
-    font-weight: bolder;
-    /* font-size: 1.2rem; */
-    color: #b95151;
+  margin-top: 3ch;
+  margin-bottom: 3ch;
+  border-bottom: 1px solid rgb(179, 179, 179);
+  font-weight: bolder;
+  color: #b95151;
 }
 
 .para {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
 .div-click-here {
   margin-top: 3ch;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .click {
@@ -59,7 +58,7 @@
 
 .div-add-post {
   margin-top: 2ch;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bolder;
   display: grid;
   grid-template-columns: 5ch 30ch;
@@ -67,9 +66,10 @@
   gap: 2ch;
 }
 
-.div-add-post input, .card-title-body input {
+.div-add-post input,
+.card-title-body input {
   height: 5ch;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: left;
   padding-left: 2ch;
   border: none;
@@ -81,23 +81,28 @@
   margin-top: 2ch;
 }
 
-.btn-add-post, .btn-edit {
+.btn-add-post,
+.btn-edit {
   height: 4ch;
   width: 50%;
   background-color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bolder;
   font-size: medium;
   margin: auto;
   border-radius: 10px;
 }
 
-.btn-add-post:hover, .btn-edit:hover, .btn-yes:hover, .btn-no:hover {
+.btn-add-post:hover,
+.btn-edit:hover,
+.btn-yes:hover,
+.btn-no:hover {
   color: #582727;
   cursor: pointer;
 }
 
-.edit-icon, .delete-icon {
+.edit-icon,
+.delete-icon {
   cursor: pointer;
   font-size: 1.5rem;
   margin-top: -0.2ch;
@@ -112,7 +117,6 @@
   gap: 2ch;
   justify-content: center;
   margin-bottom: 2ch;
-  /* border-bottom: 1px solid rgb(179, 179, 179); */
 }
 
 .div-name-edit p {
@@ -130,12 +134,13 @@
   margin-bottom: 1ch;
 }
 
-.btn-yes, .btn-no {
+.btn-yes,
+.btn-no {
   width: 6ch;
   height: 3ch;
   margin-bottom: 2ch;
   background-color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bolder;
   font-size: medium;
   border-radius: 10px;
@@ -162,7 +167,6 @@
     display: flex;
     flex-direction: column;
   }
-
 }
 
 @media (max-width: 600px) {
@@ -174,9 +178,9 @@
 
   .div-posts {
     display: flex;
-  flex-direction: row;
-  justify-content: left;
-  margin-left: 2ch;
+    flex-direction: row;
+    justify-content: left;
+    margin-left: 2ch;
   }
 
   .card {
@@ -188,8 +192,8 @@
   }
 
   .div-add-post {
-  display: grid;
-  grid-template-columns: 3ch 20ch;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: 3ch 20ch;
+    justify-content: center;
   }
 }

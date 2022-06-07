@@ -1,4 +1,4 @@
-import "./Users.css"
+import "./Users.css";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -29,9 +29,7 @@ function Users() {
     await axios
       .get("https://jsonplaceholder.typicode.com/albums")
       .then((response) => {
-        console.log(response);
         setAlbums(response.data);
-        console.log(albums);
       })
       .catch((error) => {});
   };
@@ -41,9 +39,6 @@ function Users() {
 
   useEffect(() => {
     getUsers();
-  }, []);
-
-  useEffect(() => {
     getAlbums();
   }, []);
 

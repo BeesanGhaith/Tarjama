@@ -37,7 +37,6 @@ function Posts() {
       .get("https://jsonplaceholder.typicode.com/posts")
       .then((response) => {
         dispatch(setPosts(response.data));
-        console.log(response.data);
       })
       .catch((error) => {});
   };
@@ -47,7 +46,6 @@ function Posts() {
       .get("https://jsonplaceholder.typicode.com/comments")
       .then((response) => {
         dispatch(setComments(response.data));
-        console.log(response.data);
       })
       .catch((error) => {});
   };
@@ -60,7 +58,6 @@ function Posts() {
         body,
       })
       .then((response) => {
-        console.log(response);
         dispatch(addPosts(response.data));
       });
   };
@@ -72,7 +69,6 @@ function Posts() {
         body: bodyPut,
       })
       .then((response) => {
-        console.log(id);
         dispatch(updatePosts(response.data));
       })
       .catch((error) => {});
@@ -172,7 +168,6 @@ function Posts() {
                             className="btn-yes"
                             onClick={() => {
                               deletePostById(post.id);
-                              console.log(post.id);
                               setDeletePost(false);
                             }}
                           >

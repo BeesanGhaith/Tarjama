@@ -10,7 +10,6 @@ function Login() {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -33,7 +32,6 @@ function Login() {
           if (element.username == userName && element.email == email) {
             localStorage.setItem("user", JSON.stringify(element));
             dispatch(login(element));
-            console.log(element);
             navigate("/home");
             setMessage("");
           } else if (
@@ -75,7 +73,11 @@ function Login() {
             />
             <button className="btn-login">Sign in</button>
           </form>
-          {message ? message && <div className="error-message">{message}</div> : <div></div>}
+          {message ? (
+            message && <div className="error-message">{message}</div>
+          ) : (
+            <div></div>
+          )}
         </div>
       </div>
     </>
