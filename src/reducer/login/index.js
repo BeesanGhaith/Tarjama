@@ -1,5 +1,5 @@
 const initialState = {
-    user: "" || localStorage.getItem("user"),
+    user: [] || localStorage.getItem("user"),
     isLoggedIn: localStorage.getItem("user") ? true : false,
   };
   
@@ -12,7 +12,7 @@ const initialState = {
         };
       case "LOG_OUT":
         return {
-          user: "",
+          user: [],
           isLoggedIn: false,
         };
   
