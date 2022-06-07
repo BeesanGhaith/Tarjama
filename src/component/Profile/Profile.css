@@ -1,14 +1,102 @@
+.div-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2ch;
+  margin-top: 2ch;
+  font-family: "Montserrat", sans-serif;
+}
+
+.div-icons h1 {
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.edit-icon-pro {
+  font-size: 2rem;
+  margin-top: 7px;
+}
+
+.edit-icon-pro:hover {
+    cursor: pointer;
+    color: #b95151;
+}
+
+.div-profile {
+  margin-left: 10ch;
+  margin-top: 3ch;
+  margin-bottom: 5ch;
+  font-family: "Montserrat", sans-serif;
+}
+
+.div-address-company {
+  display: flex;
+  gap: 10ch;
+  margin-top: 3ch;
+  flex-wrap: wrap;
+}
+
 .div-info {
-    display: grid;
-    grid-template-columns: 10ch auto;
+  display: flex;
+  flex-direction: row;
 }
 
-.div-f {
-    display: flex;
-    flex-direction: row;
+.info-title-p {
+  font-size: 1.5rem;
+  text-decoration: underline;
+  margin-bottom: 1ch;
 }
 
-.div-c {
-    display: flex;
-    flex-direction: column;
+.info-title p,
+.info-body p,
+.info-title-p {
+  font-weight: bolder;
+  line-height: 3ch;
+  text-align: left;
+}
+
+.info-body p {
+  font-weight: lighter;
+}
+
+.info-body {
+  margin-left: 1ch;
+}
+
+.div-info-put {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1ch;
+}
+
+.div-info-put input {
+  height: 3ch;
+  width: 30ch;
+  text-align: left;
+  padding-left: 1ch;
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+  margin-bottom: 0.5ch;
+  font-family: "Montserrat", sans-serif;
+}
+
+.div-edit-pro {
+  display: flex;
+  justify-content: left;
+  margin-top: 2ch;
+}
+
+.btn-edit-pro {
+  height: 4ch;
+  width: 200px;
+  background-color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+  font-size: medium;
+  border-radius: 10px;
+}
+
+.btn-edit-pro:hover {
+    color: #582727;
+  cursor: pointer;
 }
