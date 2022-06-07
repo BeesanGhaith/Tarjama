@@ -29,7 +29,12 @@ function Navigation() {
       {state.isLoggedIn ? (
         <>
           <div className="div-navbar">
-            <h2 className="name">{state.user.name}</h2>
+            <h2 className="name" onClick={() => {
+              navigate("/profile")
+            }}>{state.user.name}</h2>
+            <h2 onClick={() => {
+              navigate("/home")
+            }}>Home</h2>
             <h2 className="logout" onClick={logoutUser}>LogOut</h2>
           </div>
         </>
