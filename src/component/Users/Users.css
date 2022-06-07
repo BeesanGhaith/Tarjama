@@ -1,0 +1,11 @@
+.table {
+  margin: auto;
+  margin-top: 5ch;
+}
+
+th,
+td {
+  border: 1px solid #f5e3e3;
+  font-family: "Montserrat", sans-serif;
+  padding: 1ch 2ch;
+}
