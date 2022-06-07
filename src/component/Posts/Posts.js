@@ -9,13 +9,18 @@ import {
   deletePosts,
   setComments,
 } from "../../reducer/posts/index";
-import { AiTwotoneEdit } from "react-icons/ai";
+import { AiTwotoneEdit, AiTwotoneDelete } from "react-icons/ai";
 
 function Posts() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false); // to view the add div
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [update, setUpdate] = useState(false);
+  const [update, setUpdate] = useState(false); // to view the update div
+  const [titlePut, setTitlePut] = useState("");
+  const [bodyPut, setBodyPut] = useState("");
+  const [deletePost, setDeletePost] = useState(false); // to view the delete div
+  const [idDelete, setIdDelete] = useState(); // to find out which post needs to be deleted by ID
+  const [idUpdate, setIdUpdate] = useState(); // to find out which post needs to be edited by ID
 
   const dispatch = useDispatch();
 
@@ -32,6 +37,7 @@ function Posts() {
       .get("https://jsonplaceholder.typicode.com/posts")
       .then((response) => {
         dispatch(setPosts(response.data));
+        console.log(response.data);
       })
       .catch((error) => {});
   };
@@ -59,49 +65,67 @@ function Posts() {
       });
   };
 
-  // const getPostsById = async (id) => {
-  //   await axios
-  //     .get(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch((error) => {});
-  // };
+  const updatePostById = async (id) => {
+    await axios
+      .patch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+        title: titlePut,
+        body: bodyPut,
+      })
+      .then((response) => {
+        console.log(id);
+        dispatch(updatePosts(response.data));
+      })
+      .catch((error) => {});
+  };
+
+  const deletePostById = async (id) => {
+    await axios
+      .delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      .then((response) => {
+        dispatch(deletePosts(id));
+      })
+      .catch((error) => {});
+  };
 
   useEffect(() => {
-    // getPostsById(state.user.id);
     getPosts();
     getComment();
-  }, [state.user]);
+  }, []);
 
   return (
     <>
-      <div>
-        <p
+      <div className="div-click-here">
+        <span
+          className="click"
           onClick={() => {
             setShow(true);
           }}
         >
-          Click here if you want to add a new post ..
-        </p>
+          Click here
+        </span>
+        <span> if you want to add a new post ..</span>
       </div>
       {show && show ? (
-        <div>
-          <p>Title</p>
+        <div className="div-add-post">
+          <p>Title:</p>
           <input
+            placeholder="What are you thinking about?."
             onChange={(e) => {
               setTitle(e.target.value);
             }}
           />
-          <p>Body</p>
+          <p>Body:</p>
           <input
             onChange={(e) => {
               setBody(e.target.value);
             }}
           />
+          <br />
           <button
+            className="btn-add-post"
             onClick={() => {
               addPost();
+              setShow(false);
             }}
           >
             Submite
@@ -113,48 +137,120 @@ function Posts() {
 
       <div className="div-posts">
         {state.posts &&
-          state.posts.map((element) => {
-            if (element.userId == state.user.id) {
+          state.posts.map((post) => {
+            if (post.userId == state.user.id) {
               return (
                 <>
                   <div className="card">
-                    <AiTwotoneEdit
-                      onClick={() => {
-                        setUpdate(true);
-                      }}
-                    />
-                    {update ? (
+                    <div className="div-name-edit">
+                      <p>{state.user.name}</p>
+                      <AiTwotoneEdit
+                        className="edit-icon"
+                        onClick={() => {
+                          setUpdate(true);
+                          setTitlePut(post.title);
+                          setBodyPut(post.body);
+                          setIdUpdate(post.id);
+                          setDeletePost(false);
+                        }}
+                      />
+                      <AiTwotoneDelete
+                        className="delete-icon"
+                        onClick={() => {
+                          setDeletePost(true);
+                          setIdDelete(post.id);
+                          setUpdate(false);
+                        }}
+                      />
+                    </div>
+
+                    {deletePost && post.id == idDelete ? (
+                      <>
+                        <div className="div-delete">
+                          <p>Are you sure?</p>
+                          <button
+                            className="btn-yes"
+                            onClick={() => {
+                              deletePostById(post.id);
+                              console.log(post.id);
+                              setDeletePost(false);
+                            }}
+                          >
+                            Yes
+                          </button>
+                          <button
+                            className="btn-no"
+                            onClick={() => {
+                              setDeletePost(false);
+                            }}
+                          >
+                            No
+                          </button>
+                        </div>
+                      </>
+                    ) : (
                       <></>
+                    )}
+                    {update && post.id == idUpdate ? (
+                      <>
+                        <div className="card-title-body">
+                          <p className="para-put">Title: </p>
+                          <input
+                            defaultValue={post.title}
+                            onChange={(e) => {
+                              setTitlePut(e.target.value);
+                            }}
+                          />
+                          <p className="para-put">Body: </p>
+                          <input
+                            defaultValue={post.body}
+                            onChange={(e) => {
+                              setBodyPut(e.target.value);
+                            }}
+                          />
+                          <br />
+                          <button
+                            className="btn-edit"
+                            onClick={() => {
+                              updatePostById(post.id);
+                              setUpdate(false);
+                            }}
+                          >
+                            Edit
+                          </button>
+                        </div>
+                      </>
                     ) : (
                       <>
                         <div className="card-title-body">
                           <p className="para">Title: </p>
-                          <p>{element.title}</p>
+                          <p>{post.title}</p>
                           <p className="para">Body: </p>
-                          <p>{element.body}</p>
+                          <p>{post.body}</p>
                         </div>
-                        <p className="comments">COMMENTS:</p>
-                        {state.comments ? (
-                          state.comments.map((elementCom) => {
-                            if (element.id === elementCom.postId) {
-                              return (
-                                <>
-                                  <div className="card-title-body">
-                                    <p className="para">Name:</p>
-                                    <p>{elementCom.name}</p>
-                                    <p className="para">Email:</p>
-                                    <p>{elementCom.email}</p>
-                                    <p className="para">Body:</p>
-                                    <p>{elementCom.body}</p>
-                                  </div>
-                                </>
-                              );
-                            }
-                          })
-                        ) : (
-                          <></>
-                        )}
                       </>
+                    )}
+
+                    <p className="comments">COMMENTS:</p>
+                    {state.comments ? (
+                      state.comments.map((comment) => {
+                        if (post.id === comment.postId) {
+                          return (
+                            <>
+                              <div className="card-title-body">
+                                <p className="para">Name:</p>
+                                <p>{comment.name}</p>
+                                <p className="para">Email:</p>
+                                <p>{comment.email}</p>
+                                <p className="para">Body:</p>
+                                <p>{comment.body}</p>
+                              </div>
+                            </>
+                          );
+                        }
+                      })
+                    ) : (
+                      <></>
                     )}
                   </div>
                 </>
@@ -165,23 +261,23 @@ function Posts() {
                   <div className="card">
                     <div className="card-title-body">
                       <p className="para">Title: </p>
-                      <p>{element.title}</p>
+                      <p>{post.title}</p>
                       <p className="para">Body: </p>
-                      <p>{element.body}</p>
+                      <p>{post.body}</p>
                     </div>
                     <p className="comments">COMMENTS:</p>
                     {state.comments ? (
-                      state.comments.map((elementCom) => {
-                        if (element.id === elementCom.postId) {
+                      state.comments.map((comment) => {
+                        if (post.id === comment.postId) {
                           return (
                             <>
                               <div className="card-title-body">
                                 <p className="para">Name:</p>
-                                <p>{elementCom.name}</p>
+                                <p>{comment.name}</p>
                                 <p className="para">Email:</p>
-                                <p>{elementCom.email}</p>
+                                <p>{comment.email}</p>
                                 <p className="para">Body:</p>
-                                <p>{elementCom.body}</p>
+                                <p>{comment.body}</p>
                               </div>
                             </>
                           );
