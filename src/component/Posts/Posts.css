@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.div-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2%;
+  margin-bottom: 3ch;
+}
+
+.card {
+  box-shadow: 0 0 2px gray;
+  border-radius: 10px;
+  width: 40%;
+  padding: 2ch 2ch;
+  margin-top: 5ch;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card p {
+  text-align: left;
+}
+
+.card-title-body {
+  display: grid;
+  grid-template-columns: 5.5ch auto;
+}
+
+.comments {
+    margin-top: 3ch;
+    margin-bottom: 3ch;
+    border-bottom: 1px solid rgb(179, 179, 179);
+    font-weight: bolder;
+    /* font-size: 1.2rem; */
+    color: #b95151;
+}
+
+.para {
+    font-weight: bolder;
+}
