@@ -1,22 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Aclonica&display=swap");
 
 .div-navbar {
-    display: flex;
-    justify-content: space-between;
-    height: 4ch;
-    background-color: #c53f3f;
-    box-shadow: 0 0 10px #c53f3f;
-    padding-top: 2ch;
-    font-family: 'Aclonica', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  height: 6ch;
+  background-color: #c53f3f;
+  box-shadow: 0 0 10px #c53f3f;
+  padding-top: 2ch;
+  font-family: "Aclonica", sans-serif;
+  color: white;
 }
 
-.name {
-    color: white;
-    margin-left: 4ch;
+.div-navbar div {
+  display: flex;
+}
+
+.home-icon {
+  margin-left: 5ch;
+  margin-right: 0.3ch;
+  margin-top: -0.3ch;
+  font-size: 1.8rem;
+}
+
+.name:hover,
+.home:hover,
+.logout:hover {
+  cursor: pointer;
+  text-shadow: 0 0 15px;
+}
+
+.user-icon {
+  font-size: 1.8rem;
+  margin-right: 0.5ch;
+}
+
+.logout-icon {
+  margin-left: 3ch;
+  margin-right: 0.5ch;
+  font-size: 1.5rem;
 }
 
 .logout {
-    margin-right: 5ch;
-    color: white;
-
+  margin-right: 5ch;
+  color: white;
 }
