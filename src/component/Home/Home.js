@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Users from "../Users/Users";
 import Posts from "../Posts/Posts";
+import { FaUsers } from "react-icons/fa";
+import {MdOutlinePostAdd} from "react-icons/md";
 
 function Home() {
   const [users, setUsers] = useState(false);
@@ -22,31 +24,37 @@ function Home() {
     <>
       <div className="div-home">
         <div className="div-left-menu">
-          <h2
-            onClick={() => {
-              setUsers(true);
-              setPosts(false);
-            }}
-          >
-            Users
-          </h2>
+          <div>
+            <FaUsers className="users-icon" />
+            <h2
+              onClick={() => {
+                setUsers(true);
+                setPosts(false);
+              }}
+            >
+              Users
+            </h2>
+          </div>
+          <div>
+            <MdOutlinePostAdd className="users-icon"/>
           <h2
             onClick={() => {
               setPosts(true);
               setUsers(false);
             }}
-          >
+            >
             Posts
           </h2>
+            </div>
         </div>
         <div>
-        {users ? (
-          <Users />
-        ) : (
-          <>
-            <Posts />
-          </>
-        )}
+          {users ? (
+            <Users />
+          ) : (
+            <>
+              <Posts />
+            </>
+          )}
         </div>
       </div>
     </>
