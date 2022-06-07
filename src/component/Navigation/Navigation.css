@@ -1,4 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
 .div-navbar {
-    height: 8ch;
+    display: flex;
+    justify-content: space-between;
+    height: 4ch;
     background-color: #c53f3f;
+    box-shadow: 0 0 10px #c53f3f;
+    padding-top: 2ch;
+    font-family: 'Aclonica', sans-serif;
+}
+
+.name {
+    color: white;
+    margin-left: 4ch;
+}
+
+.logout {
+    margin-right: 5ch;
+    color: white;
+
 }
