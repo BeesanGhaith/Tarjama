@@ -1,0 +1,17 @@
+.div-home {
+  display: grid;
+  grid-template-columns: 13ch auto;
+}
+
+.div-left-menu {
+  font-family: 'Aclonica', sans-serif;
+  background-color: #c53f3f;
+  height: calc(100vh - 76px);
+  /* height: 100%; */
+  box-shadow: 0 0 20px #c53f3f;
+}
+
+.div-left-menu h2 {
+    padding-top: 4ch;
+    color: white;
+}
