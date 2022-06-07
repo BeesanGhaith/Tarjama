@@ -1,25 +1,56 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux";
-
+import "./Home.css";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import Users from "../Users/Users";
+import Posts from "../Posts/Posts";
 
 function Home() {
-
-    const dispatch = useDispatch();
+  const [users, setUsers] = useState(false);
+  const [posts, setPosts] = useState(false);
 
   const state = useSelector((state) => {
     return {
-      user: state.loginReducer.user
+      user: state.loginReducer.user,
+      isLoggedIn: state.loginReducer.isLoggedIn,
     };
   });
 
-  useEffect(() => {
-      console.log(state.user);
-  })
+  const navigate = useNavigate();
+
   return (
     <>
-    
+      <div className="div-home">
+        <div className="div-left-menu">
+          <h2
+            onClick={() => {
+              setUsers(true);
+              setPosts(false);
+            }}
+          >
+            Users
+          </h2>
+          <h2
+            onClick={() => {
+              setPosts(true);
+              setUsers(false);
+            }}
+          >
+            Posts
+          </h2>
+        </div>
+        <div>
+        {users ? (
+          <Users />
+        ) : (
+          <>
+            <Posts />
+          </>
+        )}
+        </div>
+      </div>
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;
