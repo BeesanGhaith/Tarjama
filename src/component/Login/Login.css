@@ -3,6 +3,7 @@
 .div-login {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   margin-top: 15ch;
@@ -70,9 +71,16 @@
 
 .error-message {
   margin-bottom: 2ch;
-    font-family: system-ui;
-    color: #c53f3f;
-    font-weight: bold;
-    font-size: 0.9rem;
+  font-family: system-ui;
+  color: #c53f3f;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 888px) {
+  .div-login {
+    margin-top: 1ch;
+    margin-bottom: 1ch;
+  }
 }
 

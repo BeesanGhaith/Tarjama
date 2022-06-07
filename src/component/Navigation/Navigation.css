@@ -13,6 +13,7 @@
 
 .div-navbar div {
   display: flex;
+  flex-direction: row;
 }
 
 .home-icon {
@@ -43,4 +44,58 @@
 .logout {
   margin-right: 5ch;
   color: white;
+}
+
+@media (max-width: 900px) {
+  .div-navbar h2 {
+    font-size: 1.3rem;
+  }
+
+  .home-icon,
+  .logout-icon,
+  .user-icon {
+    font-size: 1.5rem;
+  }
+
+  .home-icon {
+    margin-left: 3ch;
+  }
+
+  .logout {
+    margin-right: 3ch;
+  }
+}
+
+@media (max-width: 415px) {
+  .div-navbar {
+    padding-top: 1.5ch;
+    height: 4ch;
+  }
+
+  .div-navbar h2 {
+    font-size: 0.8rem;
+  }
+
+  .home-icon {
+    margin-left: 0.5ch;
+    font-size: 1.2rem;
+    margin-top: -5px;
+  }
+
+  .user-icon {
+    font-size: 1.2rem;
+    margin-right: 0.2ch;
+    margin-top: -2px;
+  }
+
+  .logout-icon {
+    margin-left: 1ch;
+    margin-right: 0.2ch;
+    font-size: 1rem;
+    margin-top: -2px;
+  }
+
+  .logout {
+    margin-right: 1ch;
+  }
 }

@@ -15,6 +15,11 @@ const initialState = {
           user: [],
           isLoggedIn: false,
         };
+        case "SET_USERS":
+          return {
+            ...state,
+            user: payload,
+          }
   
       default:
         return state;
@@ -31,3 +36,6 @@ const initialState = {
     return { type: "LOG_OUT" };
   };
   
+  export const setUsers = (user) => {
+    return { type: "SET_USERS", payload: user };
+}

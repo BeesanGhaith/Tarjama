@@ -48,10 +48,6 @@ function Login() {
       .catch((error) => {});
   };
 
-  useEffect(() => {
-    // console.log(state.user);
-  });
-
   return (
     <>
       <div className="div-login">

@@ -100,3 +100,13 @@
     color: #582727;
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  .div-profile {
+    margin-left: 2ch;
+  }
+  
+  .div-address-company {
+    gap: 2ch;
+  }
+}

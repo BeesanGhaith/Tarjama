@@ -2,11 +2,11 @@
 
 .div-posts {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2%;
   margin-bottom: 3ch;
-  position: relative;
 }
 
 .card {
@@ -24,7 +24,7 @@
 
 .card-title-body {
   display: grid;
-  grid-template-columns: 5.5ch auto;
+  grid-template-columns: 5.5ch 85%;
 }
 
 .comments {
@@ -143,4 +143,53 @@
 
 .btn-no {
   margin-left: 1ch;
+}
+
+@media (max-width: 900px) {
+  .div-posts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 95%;
+  }
+
+  .div-click-here span {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .div-click-here span {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .div-posts {
+    display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-left: 2ch;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .card-title-body p {
+    font-size: 0.8rem;
+  }
+
+  .div-add-post {
+  display: grid;
+  grid-template-columns: 3ch 20ch;
+  justify-content: center;
+  }
 }
