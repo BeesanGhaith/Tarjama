@@ -9,6 +9,8 @@
   padding-top: 2ch;
   font-family: "Aclonica", sans-serif;
   color: white;
+  position: sticky;
+  top: 0;
 }
 
 .div-navbar div {
@@ -17,7 +19,7 @@
 }
 
 .home-icon {
-  margin-left: 5ch;
+  margin-left: 4ch;
   margin-right: 0.3ch;
   margin-top: -0.3ch;
   font-size: 1.8rem;
