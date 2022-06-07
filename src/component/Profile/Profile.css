@@ -1,0 +1,14 @@
+.div-info {
+    display: grid;
+    grid-template-columns: 10ch auto;
+}
+
+.div-f {
+    display: flex;
+    flex-direction: row;
+}
+
+.div-c {
+    display: flex;
+    flex-direction: column;
+}
