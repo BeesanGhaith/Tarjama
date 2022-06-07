@@ -6,6 +6,7 @@
   justify-content: center;
   gap: 2%;
   margin-bottom: 3ch;
+  position: relative;
 }
 
 .card {
@@ -13,7 +14,7 @@
   border-radius: 10px;
   width: 40%;
   padding: 2ch 2ch;
-  margin-top: 5ch;
+  margin-top: 4ch;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -37,4 +38,104 @@
 
 .para {
     font-weight: bolder;
+}
+
+.div-click-here {
+  margin-top: 3ch;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.click {
+  font-size: larger;
+  font-weight: bolder;
+  cursor: pointer;
+  text-decoration: underline;
+  text-shadow: 0 0 10px gray;
+}
+
+.click:hover {
+  color: #b95151;
+}
+
+.div-add-post {
+  margin-top: 2ch;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  display: grid;
+  grid-template-columns: 5ch 30ch;
+  justify-content: center;
+  gap: 2ch;
+}
+
+.div-add-post input, .card-title-body input {
+  height: 5ch;
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+  padding-left: 2ch;
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+}
+
+.div-add-post p {
+  margin-top: 2ch;
+}
+
+.btn-add-post, .btn-edit {
+  height: 4ch;
+  width: 50%;
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  font-size: medium;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.btn-add-post:hover, .btn-edit:hover, .btn-yes:hover, .btn-no:hover {
+  color: #582727;
+  cursor: pointer;
+}
+
+.edit-icon {
+  cursor: pointer;
+}
+
+.para-put {
+  margin-top: 2ch;
+}
+
+.div-name-edit {
+  display: flex;
+  gap: 2ch;
+  justify-content: center;
+  margin-bottom: 2ch;
+}
+
+.div-name-edit p {
+  font-weight: bolder;
+}
+
+.btn-edit {
+  margin-top: 2ch;
+}
+
+.div-delete p {
+  text-align: center;
+  margin-bottom: 1ch;
+}
+
+.btn-yes, .btn-no {
+  width: 6ch;
+  height: 3ch;
+  margin-bottom: 2ch;
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  font-size: medium;
+  border-radius: 10px;
+}
+
+.btn-no {
+  margin-left: 1ch;
 }
