@@ -97,8 +97,10 @@
   cursor: pointer;
 }
 
-.edit-icon {
+.edit-icon, .delete-icon {
   cursor: pointer;
+  font-size: 1.5rem;
+  margin-top: -0.2ch;
 }
 
 .para-put {
@@ -110,10 +112,13 @@
   gap: 2ch;
   justify-content: center;
   margin-bottom: 2ch;
+  /* border-bottom: 1px solid rgb(179, 179, 179); */
 }
 
 .div-name-edit p {
   font-weight: bolder;
+  font-size: larger;
+  text-decoration: underline;
 }
 
 .btn-edit {
